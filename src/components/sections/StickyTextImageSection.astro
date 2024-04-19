@@ -5,7 +5,14 @@ const {reversed} = Astro.props;
 ---
 
 <Container>
-  <section class={`sticky-text-image__section ${reversed && `sticky-text-image__section--reversed`}`}>
+  <section class={`sticky-text-image__section ${reversed && `sticky-text-image__section--reversed`} card`}>
+    <div class="card-arrow">
+      <div class="card-arrow-top-left"></div>
+      <div class="card-arrow-top-right"></div>
+      <div class="card-arrow-bottom-left"></div>
+      <div class="card-arrow-bottom-right"></div>
+    </div>
+
     <div class="sticky-text-image__text">
       <slot name="text-container"></slot>
     </div>
@@ -23,6 +30,7 @@ const {reversed} = Astro.props;
     grid-template-columns: 6fr 4fr;
     position: relative;
     gap: 2rem;
+    padding: 1rem;
   }
   .sticky-text-image__section--reversed {
     grid-template-columns: 4fr 6fr;

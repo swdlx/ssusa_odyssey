@@ -8,13 +8,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Welcome to Odyssey</h1>
+				<h1 class="hero-header">Find your Supreme Solution</h1>
 				<p>
-					A marketing website theme built with <a
-						href="https://astro.build"
-						target="_blank"
-						rel="noreferrer">Astro</a
-					> and carefully crafted for startups and businesses.
+					At Supreme Solutions U.S.A., we understand the ever-evolving landscape of online competition.
 				</p>
 				<div class="hero-btns__container">
 					<Button href="/theme/get-started" customIcon
@@ -24,9 +20,9 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
             </Fragment>
             </Button
 					>
-					<Button href="/theme/style-guide" unelevated>Style Guide</Button>
+					<Button href="/theme/style-guide" unelevated>Contact Us</Button>
 				</div>
-        {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>}
+        <!-- {settings.enableThemeSwitcher && <ThemeSwitcher client:only/>} -->
 		</div>
 		<div class="hero-section__image">
 				<picture>
@@ -52,6 +48,11 @@ import {ThemeSwitcher} from '../../theme-switcher/theme-switcher';
 	.hero-section__text {
 		justify-self: center;
 		max-width: 25rem;
+	}
+
+	.hero-header{
+		font-family: "SBSkateblade";
+		
 	}
 	.hero-btns__container {
 		display: flex;

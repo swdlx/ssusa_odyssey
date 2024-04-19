@@ -1,0 +1,85 @@
+---
+import { Button, CtaCardSection } from '@components/odyssey-theme';
+import ThreeColumnTextSection from '../ThreeColumnTextSection.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+
+
+<script>
+   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+            
+        });
+    });
+});
+
+</script>
+
+<div class="cover flex flex-col align-center justify-center items-center">
+	<h1 class="hero-header">Find your <span class="logo">Supreme Solution</span></h1>
+	<p>
+		At Supreme Solutions U.S.A., we understand the ever-evolving landscape of
+		online competition.
+	</p>
+
+   <Button href="#services" 
+   >
+   Get Started
+   
+</Button  >
+</div>
+
+
+<!--    
+<CtaCardSection
+background="var(--theme-surface-2)"
+color="var(--theme-on-surface-2)"
+>
+<h2>Get Started Today</h2>
+<p>
+   It only takes a couple clicks to get what you need for your
+   business or startup.
+</p>
+<Button href="/theme/get-started" customIcon
+   >
+   Get Started 
+   <Fragment slot="icon">
+      <Icon name="ic:baseline-chevron-right" />
+   </Fragment>
+</Button  >
+</CtaCardSection> -->
+
+<ThreeColumnTextSection>
+	<div slot="column-1-body" id="services">
+		<!-- <h2>Web Design</h2> -->
+		<p>
+			Need a new website? Want to modernize your current site? Need and
+			E-Commerce solution? You've come to the right place my friend!
+		</p>
+	</div>
+	<!-- <Button slot="column-1-cta" outlined>Learn More</Button> -->
+	<Button slot="column-1-cta" href="/webdesign">Web Design</Button>
+	<div slot="column-2-body">
+		<!-- <h2>Marketing</h2> -->
+		<p>
+			Online advertising seems simple, but takes time to learn and build your
+			target audience. Our team will convert leads in to clients and customers.
+		</p>
+	</div>
+	<!-- <Button slot="column-2-cta" outlined>Learn More</Button> -->
+	<Button slot="column-2-cta" href="/marketing" >Marketing</Button>
+</ThreeColumnTextSection>
+
+<style>
+	.cover {
+		height: calc(100vh - 78px);
+	}
+   .logo{
+      font-family: var(--font);
+   }
+</style>

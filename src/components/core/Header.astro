@@ -3,7 +3,7 @@ import { Icon } from 'astro-icon/components'
 const { navData, rightMenu } = Astro.props;
 ---
 
-<script type="module">
+<script type="module" is:inline>
   const bodyElement = document.querySelector('body');
   const menuButton = document.querySelector('#menuButton')
   const navHeader = document.querySelector('#odysseyNavHeader');
@@ -78,7 +78,13 @@ const { navData, rightMenu } = Astro.props;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.171);
   }
+  body{padding-top: 78px;}
   header.header--right {
     display: grid;
     grid-template-columns: 1fr auto auto;

@@ -1,0 +1,188 @@
+---
+import {
+	Stats1,
+	Stats2,
+	LineChart,
+	StatsConversion,
+} from '@components/stats/stats';
+import Layout from '../layouts/Page.astro';
+import { Container, FeatureCard } from '@components/odyssey-theme';
+---
+
+<Layout>
+	<Container>
+		<section class="section">
+			<h1 class="header">Web Design</h1>
+			<!-- Web Design Basics -->
+			<p class="lead text-muted">
+				With a user-centric approach, we immerse ourselves in your target
+				audience's perspective, ensuring that our efforts genuinely engage them.
+				Our holistic approach covers creative design elements, color schemes,
+				messaging strategies, layout optimizations, iconography, and a seamless
+				user experience (UX). At the core of our services is the commitment to
+				enhancing your website's user interface (UI) to maximize user
+				engagement. Plus, our team of web design experts specializes in
+				integrating 'Buy Now, Pay Later' options to empower your clients and
+				boost conversions.
+			</p>
+
+			<div class="feature-card__section">
+				<h2>Examples</h2>
+				<p>Learn more about how to set up and use the Odyssey Theme.</p>
+				<div class="feature-card__grid">
+					<FeatureCard
+						href="/theme/get-started"
+						imgSrc="/assets/images/home/screenshots/get-started"
+						title="Get Started"
+					/>
+					<FeatureCard
+						href="/theme/style-guide"
+						imgSrc="/assets/images/home/screenshots/style-guide"
+						title="Style Guide"
+					/>
+				</div>
+			</div>
+		</section>
+	</Container>
+	<Container class:list={'section'}>
+		<div>
+			<h2 class="header">Online Presence</h2>
+			<h3>Essentials</h3>
+			<p>
+				Along with a domain name [ mycompany.com ] and professional email [
+				name@mycompany.com ], your brand needs to standout in today's
+				competitive market. We offer a customized and unique design and layout
+				that fits your brands image and message.
+			</p>
+			<h3>SEO</h3>
+			<p>
+				Optimizing websites to rank higher in search engine results by
+				incorporating relevant keywords, meta tags, and other SEO practices.
+			</p>
+			<h3>Analytics</h3>
+			<p>
+				Setting up tools like Google Analytics to track website traffic, user
+				behavior, and other key performance metrics.
+			</p>
+		</div>
+	</Container>
+	<!-- Financial Options -->
+
+	<Container class:list={'section'}>
+		<div>
+			<h2 class="header">Buy Now, Pay Later</h2>
+			<h3>Financing</h3>
+			<p>
+				Provide your customers with the ability to split Up Payments. The major
+				benefit of BNPL services is that you can break up payments into smaller,
+				more manageable amounts.
+			</p>
+			<h3>Partners</h3>
+			<p>Affirm, Klarna, PayPal, Afterpay, Sezzle</p>
+			<h3>Features</h3>
+			<p>
+				With your online presence, you can accept BNPL options online or in-person at any time.
+			</p>
+		</div>
+	</Container>
+
+	<!-- Finacial Benefits -->
+
+	<Container class="section">
+		<div>
+			<h2 class="header">Benefits of BNPL</h2>
+			<div class="card mb-3 hvr-grow hvr-sweep-to-top hvr-back-pulse">
+				<div class="card-body ">
+					<Stats1 client:visible />
+					<p>
+						RBC Capital Markets estimates a BNPL option increases retail
+						conversion rates 20% to 30%, and lifts the average ticket size
+						between 30% and 50%
+					</p>
+				</div>
+				<div class="card-arrow">
+					<div class="card-arrow-top-left"></div>
+					<div class="card-arrow-top-right"></div>
+					<div class="card-arrow-bottom-left"></div>
+					<div class="card-arrow-bottom-right"></div>
+				</div>
+			</div>
+
+			<div class="card mb-3 hvr-grow hvr-sweep-to-top hvr-back-pulse">
+				<div class="card-body ">
+					<Stats2 client:only="preact" />
+					<p>
+						Affirm boasts that its merchant clients report a 85% increase in
+						average order value when consumers opt to use its BNPL plan over
+						other payment methods. Affirm approves installment payments for
+						purchase totals as high as $17,500.
+					</p>
+				</div>
+				<div class="card-arrow">
+					<div class="card-arrow-top-left"></div>
+					<div class="card-arrow-top-right"></div>
+					<div class="card-arrow-bottom-left"></div>
+					<div class="card-arrow-bottom-right"></div>
+				</div>
+			</div>
+
+			<div class="card mb-3 hvr-grow hvr-sweep-to-top hvr-back-pulse">
+				<div class="card-body ">
+					<LineChart client:only="preact" />
+					<p>
+						RBC Capital Markets estimates a BNPL option increases retail
+						conversion rates 20% to 30%, and lifts the average ticket size
+						between 30% and 50%
+					</p>
+				</div>
+				<div class="card-arrow">
+					<div class="card-arrow-top-left"></div>
+					<div class="card-arrow-top-right"></div>
+					<div class="card-arrow-bottom-left"></div>
+					<div class="card-arrow-bottom-right"></div>
+				</div>
+			</div>
+
+			<div class="card mb-3 hvr-grow hvr-sweep-to-top hvr-back-pulse">
+				<div class="card-body ">
+					<StatsConversion client:only="preact" />
+					<p>
+						Affirm boasts that its merchant clients report a 85% increase in
+						average order value when consumers opt to use its BNPL plan over
+						other payment methods. Affirm approves installment payments for
+						purchase totals as high as $17,500.
+					</p>
+				</div>
+				<div class="card-arrow">
+					<div class="card-arrow-top-left"></div>
+					<div class="card-arrow-top-right"></div>
+					<div class="card-arrow-bottom-left"></div>
+					<div class="card-arrow-bottom-right"></div>
+				</div>
+			</div>
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.header {
+		font-family: var(--font);
+	}
+	.section {
+		padding-bottom: 2rem;
+	}
+
+	<style > .feature-card__section {
+		margin: var(--section-margin) auto;
+	}
+	.feature-card__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	@media (max-width: 768px) {
+		.feature-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
